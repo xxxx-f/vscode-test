@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="load()">
+    <input id="name" type="text">    
+    <button id="submit-btn">Submit</button>
+    <p id="content">显示一下</p>
+    <!-- 多选框隐藏 -->
+    <br>
+    <label>
+        <input id="school" name="status" type="radio" onchange="check()">
+        School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio" onchange="check()">
+        Company
+    </label>
+
+    <select id="school-select">        
+        <option>北京邮电大学</option>
+        <option>黑龙江大学</option>
+        <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">        
+        <option>百度</option>
+        <option>爱奇艺</option>        
+    </select>
+</body>
+<script>
+    document.getElementById("submit-btn").onclick=function(){
+        var str=document.getElementById("name").value;
+        document.getElementById("content").innerHTML=str;
+    }
+
+    var input = document.getElementById("name");
+    input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        var str=document.getElementById("name").value;
+        document.getElementById("content").innerHTML=str;
+    }
+    if(event.keyCode === 27){
+        document.getElementById("name").innerHTML=" ";
+    }
+});
+    function load(){
+        document.getElementById("school").checked=true;
+    }
+    function check(){
+        if(document.getElementById("school").checked){
+            document.getElementById("company-select").style.display="none";
+            document.getElementById("school-select").style.display="inline";
+        }else{
+            document.getElementById("school-select").style.display="none";
+            document.getElementById("company-select").style.display="inline";
+        }
+    }
+</script>
+</html>
