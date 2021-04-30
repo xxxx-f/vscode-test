@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+        function dec2(decNumber){
+            return decNumber.toString(2);
+        }
+        document.getElementById(trans-btn).onclick=function(){
+            var decNumber=document.getElementById(dec-number).value;
+            document.getElementById(result).innerHTML=dec2(decNumber).value;
+        }
+    </script>
+</body>
+</html>
